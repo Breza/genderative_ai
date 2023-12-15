@@ -10,8 +10,3 @@ Interesting stuff:
 - Thing 1!
 
 > You shall not pass
-
-
-
-> You shall
-> not pass
