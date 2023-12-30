@@ -1,30 +1,39 @@
 import cv2
-import os
 import polars as pl
 
-print(pl.read_csv("unlabeled_path_test.csv").to_series().to_list())
-def label_images(image_folder, output_file):
+
+def label_images(csv_file, output_file):
     labels = []
-    #image_files = [f for f in os.listdir(image_folder) if f.endswith('.jpg')]
-    image_files = pl.read_csv("unlabeled_path_test.csv").to_series().to_list()
+
+    # Read image paths from the CSV file
+    image_files = pl.read_csv(csv_file).to_series().to_list()
 
     for image_path in image_files:
-        #image_path = os.path.join(image_folder, image_file)
         image = cv2.imread(image_path)
-        cv2.imshow("Image", image)
+        if image is not None:
+            cv2.putText(image, '0=Female, 1=Male, 2=Discard', (10, 30),
+                        cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+            cv2.imshow("Image", image)
 
-        key = cv2.waitKey(0)  # Wait for a key press
-        if key == ord('0'):
-            labels.append((image_path, 0))
-        elif key == ord('1'):
-            labels.append((image_path, 1))
+            key = cv2.waitKey(0)  # Wait for a key press
+            if key == ord('0'):
+                labels.append((image_path, "Female"))
+            elif key == ord('1'):
+                labels.append((image_path, "Male"))
+            elif key == ord('2'):
+                labels.append((image_path, "Discard"))
+            else:
+                #raise ValueError("Only allowed values are 0, 1, and 2")
+                pass
+            print(f"Key pressed: {chr(key)}")
 
-        cv2.destroyAllWindows()
+            cv2.destroyAllWindows()
+        else:
+            print(f"Could not read image: {image_path}")
 
-    # Save labels to a file
     with open(output_file, 'w') as f:
         for item in labels:
             f.write(f"{item[0]},{item[1]}\n")
 
-# Usage
-label_images("path/to/image/folder", "labels.csv")
+
+label_images("unlabeled_path_test.csv", "labels.csv")
