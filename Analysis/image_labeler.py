@@ -1,3 +1,4 @@
+import os
 import cv2
 import polars as pl
 
@@ -6,7 +7,14 @@ def label_images(csv_file, output_file):
     labels = []
 
     # Read image paths from the CSV file
-    image_files = pl.read_csv(csv_file).to_series().to_list()
+    # image_files = pl.read_csv(csv_file).to_series().to_list()
+
+    # TODO: Remove this section before using in production
+    image_files = []
+    for file in os.listdir(".."):
+        if file.endswith(".jpeg"):
+            print(os.path.join("..", file))
+            image_files.append(os.path.join("..", file))
 
     for image_path in image_files:
         image = cv2.imread(image_path)
@@ -23,7 +31,7 @@ def label_images(csv_file, output_file):
             elif key == ord('2'):
                 labels.append((image_path, "Discard"))
             else:
-                #raise ValueError("Only allowed values are 0, 1, and 2")
+                raise ValueError("Only allowed values are 0, 1, and 2")
                 pass
             print(f"Key pressed: {chr(key)}")
 
