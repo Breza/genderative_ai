@@ -73,8 +73,8 @@ classifications = []
 current_index = 0
 
 # Use a themed Tk instance
-root = ThemedTk(theme="equilux")
-root.title("Image Classification Tool")
+root = ThemedTk(theme="arc")
+root.title("Genderative AI labeler")
 
 # Create a label for image display
 image_label = tk.Label(root)

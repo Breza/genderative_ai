@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017f67b3-eb2f-48e1-a7b3-8587e2cd13d5" name="Changes" comment="Creates fully functional tkinter image labeling application">
+    <list default="true" id="017f67b3-eb2f-48e1-a7b3-8587e2cd13d5" name="Changes" comment="Updates tkinter image labeler to make it even cooler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Analysis/tkinter_labeling_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis/tkinter_labeling_test.py" afterDir="false" />
     </list>
@@ -189,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704088175706</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updates tkinter image labeler to make it even cooler">
+      <option name="closed" value="true" />
+      <created>1704088488264</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704088488264</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -199,6 +207,7 @@
     <MESSAGE value="Uploads labeling results file" />
     <MESSAGE value="First attempt at using tkinter" />
     <MESSAGE value="Creates fully functional tkinter image labeling application" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creates fully functional tkinter image labeling application" />
+    <MESSAGE value="Updates tkinter image labeler to make it even cooler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates tkinter image labeler to make it even cooler" />
   </component>
 </project>
