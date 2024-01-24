@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\train_holdout_bad_guesses.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\train_holdout_manual_labels.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\training_log.csv">
           <value>
             <Attribute>
